@@ -4,7 +4,7 @@ from agno.tools.yfinance import YFinanceTools
 import mal.agno.model as model
 
 
-m = model.ollama
+m = model.deepseek
 
 web_agent = Agent(
     name="Web Agent",
