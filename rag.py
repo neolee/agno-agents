@@ -11,7 +11,7 @@ vector_db=LanceDb(
     table_name="articles",
     uri="db/lancedb",
     search_type=SearchType.vector,
-    embedder=OllamaEmbedder(id="snowflake-arctic-embed2"),
+    embedder=OllamaEmbedder(id="snowflake-arctic-embed2", dimensions=1024),
 )
 
 knowledge_base = PDFKnowledgeBase(
