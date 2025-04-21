@@ -10,10 +10,15 @@ agent = Agent(
     markdown=True,
 )
 
-# url = "https://www.news.cn/politics/20250119/f33c2caa323249ca8fd2038515ee9620/c.html"
-url = "https://ysymyth.github.io/The-Second-Half/"
 
-# prompt = "Tell me about "
-prompt = "阅读网页并给出内容摘要："
+if __name__ == "__main__":
+    prompt = "阅读网页并给出内容摘要："
+    url = "https://ysymyth.github.io/The-Second-Half/"
 
-agent.print_response(prompt + url, stream=True)
+    import argparse
+    parser = argparse.ArgumentParser(description="web crawler agent")
+    parser.add_argument("url", type=str, help="url to read", nargs='?')
+    args = parser.parse_args()
+    if args.url: url = args.url
+
+    agent.print_response(prompt + url, stream=True)
