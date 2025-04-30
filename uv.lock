@@ -8,7 +8,7 @@ resolution-markers = [
 
 [[package]]
 name = "agno"
-version = "1.4.2"
+version = "1.4.3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "docstring-parser" },
@@ -24,9 +24,9 @@ dependencies = [
     { name = "typer" },
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/c9/c4/0b0d33bcfc0e567caf52e9d548aabfe30de80614e8401d7a3ee38c9c3ca7/agno-1.4.2.tar.gz", hash = "sha256:4c6365855542e26781bc41c9e93920dcc14f111c099b8a5809cd5e81a54d2fd7", size = 522650, upload-time = "2025-04-24T21:27:05.764Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/10/f6/bbe01bb5508132e2bf2e02f9865f3bbd7c13936d59786d74f47fb200fc0d/agno-1.4.3.tar.gz", hash = "sha256:90276f6f8af06a97e984093dbd676bfce4d0ae3b858fad10ea246da450e37076", size = 525080, upload-time = "2025-04-30T13:23:43.501Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/d6/c2/8e44f6f21bde2950ac6041f8ef52e0cf27d19d417e2d82e008a1aea3520e/agno-1.4.2-py3-none-any.whl", hash = "sha256:76aa7823bfff7effa00c3af5260bbe35d6f3fde7a7e5b41d01ad4aec644c6f07", size = 685205, upload-time = "2025-04-24T21:27:03.274Z" },
+    { url = "https://files.pythonhosted.org/packages/c0/07/8d9adaafdc08731114e67469317c7b1566fafb828bddc359fe64cf9cf1eb/agno-1.4.3-py3-none-any.whl", hash = "sha256:f92aa8d4b0c977335cd16d1aeb46718fc0c0526bfaeeca40e22f56d130bf7aeb", size = 689513, upload-time = "2025-04-30T13:23:41.389Z" },
 ]
 
 [[package]]
@@ -803,11 +803,11 @@ wheels = [
 
 [[package]]
 name = "humanize"
-version = "4.12.2"
+version = "4.12.3"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/e0/84/ae8e64a6ffe3291105e9688f4e28fa65eba7924e0fe6053d85ca00556385/humanize-4.12.2.tar.gz", hash = "sha256:ce0715740e9caacc982bb89098182cf8ded3552693a433311c6a4ce6f4e12a2c", size = 80871, upload-time = "2025-03-24T17:12:39.167Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/22/d1/bbc4d251187a43f69844f7fd8941426549bbe4723e8ff0a7441796b0789f/humanize-4.12.3.tar.gz", hash = "sha256:8430be3a615106fdfceb0b2c1b41c4c98c6b0fc5cc59663a5539b111dd325fb0", size = 80514, upload-time = "2025-04-30T11:51:07.98Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/55/c7/6f89082f619c76165feb633446bd0fee32b0e0cbad00d22480e5aea26ade/humanize-4.12.2-py3-none-any.whl", hash = "sha256:e4e44dced598b7e03487f3b1c6fd5b1146c30ea55a110e71d5d4bca3e094259e", size = 128305, upload-time = "2025-03-24T17:12:37.059Z" },
+    { url = "https://files.pythonhosted.org/packages/a0/1e/62a2ec3104394a2975a2629eec89276ede9dbe717092f6966fcf963e1bf0/humanize-4.12.3-py3-none-any.whl", hash = "sha256:2cbf6370af06568fa6d2da77c86edb7886f3160ecd19ee1ffef07979efc597f6", size = 128487, upload-time = "2025-04-30T11:51:06.468Z" },
 ]
 
 [[package]]
