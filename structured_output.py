@@ -16,7 +16,7 @@ class MovieScript(BaseModel):
     storyline: str = Field(..., description="3 sentence storyline for the movie. Make it exciting!")
 
 structured_output_agent = Agent(
-    model=model.ollama,
+    model=model.local,
     description="You write movie scripts.",
     response_model=MovieScript,
 )
