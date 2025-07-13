@@ -1,11 +1,11 @@
 from agno.agent.agent import Agent
-import mal.agno.model as model
+import models as m
 
 
 def reasoning(task: str):
     reasoning_agent = Agent(
-        model=model.default,
-        reasoning_model=model.default_reasoner
+        model=m.default,
+        reasoning_model=m.default_reasoner
     )
 
     reasoning_agent.print_response(task, stream=True)

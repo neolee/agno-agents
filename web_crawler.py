@@ -1,10 +1,10 @@
 from agno.agent.agent import Agent
 from agno.tools.crawl4ai import Crawl4aiTools
-import mal.agno.model as model
+import models as m
 
 
 agent = Agent(
-    model=model.default,
+    model=m.default,
     tools=[Crawl4aiTools(max_length=None)],
     show_tool_calls=True,
     markdown=True,

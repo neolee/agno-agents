@@ -1,11 +1,11 @@
 from agno.agent.agent import Agent
 from agno.run.response import RunResponse
-import mal.agno.model as model
+import models as m
 
 
 agent = Agent(
     name="Basic Agent",
-    model=model.default,
+    model=m.default,
 )
 
 q = "share a 2 sentence horror story"

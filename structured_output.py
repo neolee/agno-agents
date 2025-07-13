@@ -1,9 +1,8 @@
 from typing import List
-from rich.pretty import pprint
 from pydantic import BaseModel, Field
 from agno.agent.agent import Agent
-from agno.run.response import RunResponse
-import mal.agno.model as model
+
+import models as m
 
 
 # pydantic model to enforce the structure of the output
@@ -16,7 +15,7 @@ class MovieScript(BaseModel):
     storyline: str = Field(..., description="3 sentence storyline for the movie. Make it exciting!")
 
 structured_output_agent = Agent(
-    model=model.local,
+    model=m.deepseek,
     description="You write movie scripts.",
     response_model=MovieScript,
 )
@@ -24,8 +23,3 @@ structured_output_agent = Agent(
 q = "Shanghai"
 
 structured_output_agent.print_response(q, stream=True)
-
-# more details
-response: RunResponse = structured_output_agent.run(q)
-pprint(type(response.content)) # -> <class '__main__.MovieScript'>
-pprint(response.content)

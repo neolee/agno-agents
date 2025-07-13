@@ -1,14 +1,12 @@
 from agno.agent.agent import Agent
 from agno.tools.duckduckgo import DuckDuckGoTools
 from agno.tools.googlesearch import GoogleSearchTools
-import mal.agno.model as model
+import models as m
 
-
-m = model.default
 
 agent = Agent(
     name="DuckDuckGo Agent",
-    model=m,
+    model=m.default,
     tools=[DuckDuckGoTools()],
     instructions=["Always include sources"],
     show_tool_calls=True,
@@ -20,7 +18,7 @@ agent.print_response(q)
 
 agent = Agent(
     name="Google Agent",
-    model=m,
+    model=m.default,
     tools=[GoogleSearchTools()],
     description="你是一个新闻文章智能体，帮助用户获得最新的新闻资料",
     instructions=[

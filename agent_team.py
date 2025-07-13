@@ -1,15 +1,13 @@
 from agno.agent.agent import Agent
 from agno.tools.duckduckgo import DuckDuckGoTools
 from agno.tools.yfinance import YFinanceTools
-import mal.agno.model as model
+import models as m
 
-
-m = model.deepseek
 
 web_agent = Agent(
     name="Web Agent",
     role="Search the web for information",
-    model=m,
+    model=m.default,
     tools=[DuckDuckGoTools()],
     instructions=["Always include sources"],
     show_tool_calls=True,
@@ -19,7 +17,7 @@ web_agent = Agent(
 finance_agent = Agent(
     name="Finance Agent",
     role="Get financial data",
-    model=m,
+    model=m.default,
     tools=[YFinanceTools(stock_price=True,
                          analyst_recommendations=True,
                          company_info=True,
@@ -30,7 +28,7 @@ finance_agent = Agent(
 )
 
 agent_team = Agent(
-    model=m,
+    model=m.default,
     team=[web_agent, finance_agent],
     instructions=["Always include sources", "Use tables to display data"],
     show_tool_calls=True,

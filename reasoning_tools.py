@@ -4,11 +4,11 @@ from agno.agent.agent import Agent
 from agno.tools.thinking import ThinkingTools
 from agno.tools.yfinance import YFinanceTools
 
-import mal.agno.model as model
+import models as m
 
 
 thinking_agent = Agent(
-    model=model.default,
+    model=m.default,
     tools=[
         ThinkingTools(),
         YFinanceTools(stock_price=True, analyst_recommendations=True, company_info=True, company_news=True),

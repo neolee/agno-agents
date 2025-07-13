@@ -1,17 +1,17 @@
 from agno.agent.agent import Agent
-from agno.embedder.ollama import OllamaEmbedder
 from agno.knowledge.pdf import PDFKnowledgeBase
 from agno.vectordb.lancedb.lance_db import LanceDb
 from agno.vectordb.search import SearchType
 
-import mal.agno.model as model
+from embedders import snowflake
+import models as m
 
 
 vector_db=LanceDb(
     table_name="articles",
     uri="db/lancedb",
     search_type=SearchType.vector,
-    embedder=OllamaEmbedder(id="snowflake-arctic-embed2", dimensions=1024),
+    embedder=snowflake,
 )
 
 knowledge_base = PDFKnowledgeBase(
@@ -24,7 +24,7 @@ knowledge_base = PDFKnowledgeBase(
 knowledge_base.load(recreate=False, skip_existing=True)
 
 agent = Agent(
-    model=model.default,
+    model=m.default,
     knowledge=knowledge_base,
     show_tool_calls=True,
     markdown=True,

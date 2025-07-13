@@ -1,11 +1,11 @@
 from agno.agent.agent import Agent
 from agno.tools.yfinance import YFinanceTools
-import mal.agno.model as model
+import models as m
 
 
 agent = Agent(
     name="Finance Agent",
-    model=model.default,
+    model=m.default,
     tools=[YFinanceTools(stock_price=True,
                          analyst_recommendations=True,
                          stock_fundamentals=True)],
