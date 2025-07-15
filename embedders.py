@@ -1,6 +1,6 @@
 from agno.embedder.ollama import OllamaEmbedder
 from agno.embedder.openai import OpenAIEmbedder
-from mal.providers import Provider, provider_by_alias
+from mal.providers import Provider, local_provider, qwen_provider
 
 
 def openai_embedder(provider: Provider, model_id: str, dimensions: int) -> OpenAIEmbedder:
@@ -17,12 +17,9 @@ def ollama_embedder(model_id: str, dimensions: int) -> OllamaEmbedder:
     return embedder
 
 
-_local_provider = provider_by_alias("local")
-_qwen_provider = provider_by_alias("qwen")
-
-nomic = openai_embedder(_local_provider, "nomic", 768)
-snowflake = openai_embedder(_local_provider, "snowflake", 1024)
-aliyun = openai_embedder(_qwen_provider, "text-embedding-v3", 1024)
+nomic = openai_embedder(local_provider, "nomic", 768)
+snowflake = openai_embedder(local_provider, "snowflake", 1024)
+aliyun = openai_embedder(qwen_provider, "text-embedding-v3", 1024)
 
 
 if __name__ == "__main__":
