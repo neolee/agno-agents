@@ -1,13 +1,13 @@
 from agno.agent.agent import Agent
-from agno.tools.duckduckgo import DuckDuckGoTools
+from agno.tools.tavily import TavilyTools
 from agno.tools.googlesearch import GoogleSearchTools
 import models as m
 
 
 agent = Agent(
-    name="DuckDuckGo Agent",
+    name="Tavily Agent",
     model=m.default,
-    tools=[DuckDuckGoTools()],
+    tools=[TavilyTools()],
     instructions=["Always include sources"],
     show_tool_calls=True,
     markdown=True,
