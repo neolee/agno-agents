@@ -1,4 +1,4 @@
-from agno.agent.agent import Agent
+from agno.agent import Agent
 import models as m
 
 

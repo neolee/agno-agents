@@ -1,4 +1,4 @@
-from agno.agent.agent import Agent
+from agno.agent import Agent
 from agno.knowledge.pdf import PDFKnowledgeBase
 from agno.vectordb.lancedb.lance_db import LanceDb
 from agno.vectordb.search import SearchType

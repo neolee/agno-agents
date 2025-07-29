@@ -1,6 +1,6 @@
 from typing import List
 from pydantic import BaseModel, Field
-from agno.agent.agent import Agent
+from agno.agent import Agent
 
 import models as m
 

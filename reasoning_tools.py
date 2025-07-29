@@ -1,6 +1,6 @@
 from textwrap import dedent
 
-from agno.agent.agent import Agent
+from agno.agent import Agent
 from agno.tools.thinking import ThinkingTools
 from agno.tools.yfinance import YFinanceTools
 

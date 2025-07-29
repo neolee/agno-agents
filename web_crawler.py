@@ -1,4 +1,4 @@
-from agno.agent.agent import Agent
+from agno.agent import Agent
 from agno.tools.crawl4ai import Crawl4aiTools
 import models as m
 

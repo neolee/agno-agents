@@ -1,4 +1,4 @@
-from agno.agent.agent import Agent
+from agno.agent import Agent
 from agno.tools.yfinance import YFinanceTools
 import models as m
 

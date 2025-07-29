@@ -1,4 +1,4 @@
-from agno.agent.agent import Agent
+from agno.agent import Agent
 from agno.run.response import RunResponse
 import models as m
 
