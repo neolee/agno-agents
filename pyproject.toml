@@ -8,6 +8,7 @@ dependencies = [
     "agno",
     "crawl4ai",
     "ddgs",
+    "exa_py",
     "googlesearch-python",
     "httpx[socks]",
     "lancedb",
