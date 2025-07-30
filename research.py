@@ -72,11 +72,14 @@ agent = Agent(
 
 
 if __name__ == "__main__":
-    agent.print_response(
-        "The One Big Beautiful Bill Act", stream=True
-    )
+    default_topic = "The One Big Beautiful Bill Act"
 
-# more example prompts to try:
+    import sys
+    topic = sys.argv[1] if len(sys.argv) > 1 else default_topic
+
+    agent.print_response(topic, stream=True)
+
+# more example topics to try:
 """
 "Research the latest developments in brain-computer interfaces"
 "Analyze the current state of solid-state batteries"
