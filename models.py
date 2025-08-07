@@ -1,26 +1,24 @@
 from agno.models.ollama.chat import Ollama
 from agno.models.deepseek.deepseek import DeepSeek
 
-import mal.providers as mal
-from mal.agno.client import model_by_provider, model_by_provider_with_model
+from mal.providers import deepseek_provider, ollama_provider
+from mal.adapter.agno import model
 
 
-deepseek = DeepSeek(id=mal.deepseek_provider.model_id)
-deepseek_reasoner = DeepSeek(id=mal.deepseek_provider.reasoner_model_id)
+deepseek = DeepSeek(id=deepseek_provider.model_id)
+deepseek_reasoner = DeepSeek(id=deepseek_provider.reasoner_model_id)
 
-qwen = model_by_provider(mal.qwen_provider)
-qwen_coder = model_by_provider(mal.qwen_provider, model_type="coder")
-qwen_reasoner = model_by_provider(mal.qwen_provider, model_type="reasoner")
+qwen = model("qwen/qwen-plus-latest")
+qwen_coder = model("qwen/qwen3-coder-plus")
 
-openrouter = model_by_provider(mal.openrouter_provider)
-openrouter_gemini_flash = model_by_provider_with_model(mal.openrouter_provider, model_name="google/gemini-2.5-flash")
-openrouter_gemini_pro = model_by_provider_with_model(mal.openrouter_provider, model_name="google/gemini-2.5-pro")
+openrouter_gemini_flash = model("openrouter/google/gemini-2.5-flash")
+openrouter_gemini_pro = model("openrouter/google/gemini-2.5-pro")
 
-local = model_by_provider(mal.local_provider)
+local = model("local")
 
-lmstudio = model_by_provider(mal.lmstudio_provider)
+lmstudio = model("lmstudio")
 
-ollama = Ollama(mal.ollama_provider.model_id)
+ollama = Ollama(ollama_provider.model_id)
 
 default = qwen
 default_reasoner = deepseek_reasoner
