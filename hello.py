@@ -1,5 +1,4 @@
-from agno.agent import Agent
-from agno.run.response import RunResponse
+from agno.agent import Agent, RunOutput
 import models as m
 
 
@@ -10,7 +9,7 @@ agent = Agent(
 
 q = "share a 2 sentence horror story"
 
-run: RunResponse = agent.run(q)
-print(run.content)
+r: RunOutput = agent.run(q)
+print(r.content)
 
 # agent.print_response(q)

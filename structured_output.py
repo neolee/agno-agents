@@ -17,7 +17,7 @@ class MovieScript(BaseModel):
 structured_output_agent = Agent(
     model=m.deepseek,
     description="You write movie scripts.",
-    response_model=MovieScript,
+    output_schema=MovieScript,
 )
 
 q = "Shanghai"

@@ -1,4 +1,5 @@
 from agno.agent import Agent
+from agno.team import Team
 from agno.tools.duckduckgo import DuckDuckGoTools
 from agno.tools.yfinance import YFinanceTools
 import models as m
@@ -10,7 +11,6 @@ web_agent = Agent(
     model=m.default,
     tools=[DuckDuckGoTools()],
     instructions=["Always include sources"],
-    show_tool_calls=True,
     markdown=True,
 )
 
@@ -18,20 +18,15 @@ finance_agent = Agent(
     name="Finance Agent",
     role="Get financial data",
     model=m.default,
-    tools=[YFinanceTools(stock_price=True,
-                         analyst_recommendations=True,
-                         company_info=True,
-                         company_news=True)],
+    tools=[YFinanceTools()],
     instructions=["Use tables to display data"],
-    show_tool_calls=True,
     markdown=True,
 )
 
-agent_team = Agent(
+agent_team = Team(
     model=m.default,
-    team=[web_agent, finance_agent],
+    members=[web_agent, finance_agent],
     instructions=["Always include sources", "Use tables to display data"],
-    show_tool_calls=True,
     markdown=True,
 )
 

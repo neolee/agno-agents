@@ -12,7 +12,7 @@ qwen = model("qwen/qwen-plus-latest")
 qwen_coder = model("qwen/qwen3-coder-plus")
 
 openrouter_gemini_flash = model("openrouter/google/gemini-2.5-flash")
-openrouter_gemini_pro = model("openrouter/google/gemini-2.5-pro")
+openrouter_gemini_pro = model("openrouter/google/gemini-3-pro-preview")
 
 local = model("local")
 

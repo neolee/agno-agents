@@ -1,7 +1,6 @@
 from mal.adapter.agno import openai_embedder
 
 
-
 nomic = openai_embedder("local/nomic", 768)
 snowflake = openai_embedder("local/snowflake", 1024)
 aliyun = openai_embedder("qwen/text-embedding-v3", 1024)
