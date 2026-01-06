@@ -70,7 +70,7 @@ agent = Agent(
 
 
 if __name__ == "__main__":
-    default_topic = "The One Big Beautiful Bill Act"
+    default_topic = "Study the impact of artificial intelligence on healthcare"
 
     import sys
     topic = sys.argv[1] if len(sys.argv) > 1 else default_topic
@@ -79,6 +79,7 @@ if __name__ == "__main__":
 
 # more example topics to try:
 """
+"The One Big Beautiful Bill Act"
 "Research the latest developments in brain-computer interfaces"
 "Analyze the current state of solid-state batteries"
 "Research recent breakthroughs in CRISPR gene editing"
