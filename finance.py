@@ -6,12 +6,10 @@ import models as m
 agent = Agent(
     name="Finance Agent",
     model=m.default,
-    tools=[YFinanceTools(stock_price=True,
-                         analyst_recommendations=True,
-                         stock_fundamentals=True)],
-    instructions=["Use tables to display data"],
-    show_tool_calls=True,
-    markdown=True,
+    tools=[YFinanceTools()],
+    description="You are an investment analyst that researches stock prices, analyst recommendations, and stock fundamentals.",
+    instructions=["Format your response using markdown and use tables to display data where possible."],
+    markdown=True
 )
 
 q = "Summarize analyst recommendations for NVDA"

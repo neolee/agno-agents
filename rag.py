@@ -1,9 +1,11 @@
 from agno.agent import Agent
-from agno.knowledge.pdf import PDFKnowledgeBase
+from agno.knowledge.knowledge import Knowledge
+from agno.knowledge.reader.pdf_reader import PDFReader
 from agno.vectordb.lancedb.lance_db import LanceDb
 from agno.vectordb.search import SearchType
 
 from embedders import snowflake
+from util.fs import list_files_as_strs
 import models as m
 
 
@@ -14,19 +16,21 @@ vector_db=LanceDb(
     embedder=snowflake,
 )
 
-knowledge_base = PDFKnowledgeBase(
-    path="db/pdfs",
+knowledge = Knowledge(
     vector_db=vector_db
 )
 
-# BUG parameters not work, always recreate
-# these 2 parameters are set their default values, keep them here just for note
-knowledge_base.load(recreate=False, skip_existing=True)
+parent = "./db/pdfs"
+paths = list_files_as_strs(parent, ".pdf")
+for path in paths:
+    knowledge.add_content(
+        path=path,
+        reader=PDFReader(),
+    )
 
 agent = Agent(
     model=m.default,
-    knowledge=knowledge_base,
-    show_tool_calls=True,
+    knowledge=knowledge,
     markdown=True,
 )
 
