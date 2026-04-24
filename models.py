@@ -14,5 +14,5 @@ gpt = model("openai")
 local = model("local")
 omlx = model("omlx")
 
-default = qwen
+default = deepseek
 default_reasoner = deepseek_reasoner
